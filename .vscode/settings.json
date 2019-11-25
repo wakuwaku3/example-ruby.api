@@ -1,0 +1,26 @@
+{
+  "ruby.useBundler": true,
+  "ruby.intellisense": "rubyLocate",
+  "ruby.useLanguageServer": true,
+  "solargraph.definitions": true,
+  "solargraph.diagnostics": true,
+  "ruby.lint": {
+    "rubocop": {
+      "useBundler": true
+    },
+    "reek": {
+      "useBundler": true
+    }
+  },
+  "ruby.format": "rubocop",
+  "[ruby]": { "editor.tabSize": 2 },
+  "cSpell.ignorePaths": [
+    "**/package-lock.json",
+    "**/node_modules/**",
+    "**/vscode-extension/**",
+    "**/.git/objects/**",
+    ".vscode",
+    "Gemfile**"
+  ],
+  "cSpell.words": ["eval", "libreadline", "libssl", "rbenv", "solargraph"]
+}
