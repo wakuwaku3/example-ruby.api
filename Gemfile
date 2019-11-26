@@ -39,6 +39,8 @@ group :development do
   gem 'debase'
   gem 'reek'
   gem 'rubocop'
+  gem 'rubocop-performance'
+  gem 'rubocop-rails'
   gem 'ruby-debug-ide'
   gem 'solargraph'
   gem 'spring'
@@ -47,3 +49,4 @@ end
 
 # Windows does not include zoneinfo files, so bundle the tzinfo-data gem
 gem 'tzinfo-data', platforms: [:mingw, :mswin, :x64_mingw, :jruby]
+gem 'jwt'

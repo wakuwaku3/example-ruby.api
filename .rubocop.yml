@@ -1,2 +1,11 @@
+require:
+  - rubocop-performance
+  - rubocop-rails
 Style/Documentation:
   Enabled: false
+Style/FrozenStringLiteralComment:
+  Enabled: false
+AllCops:
+  DisabledByDefault: true
+  Exclude:
+    - 'db/**/*'
