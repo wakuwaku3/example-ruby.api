@@ -23,7 +23,23 @@
     ".vscode",
     "Gemfile**"
   ],
-  "cSpell.words": ["eval", "libpq", "libreadline", "libssl", "rbenv", "solargraph"],
+  "cSpell.words": [
+    "eval",
+    "libpq",
+    "libreadline",
+    "libssl",
+    "postgres",
+    "postgresql",
+    "rbenv",
+    "solargraph"
+  ],
+  "files.watcherExclude": {
+    "**/.git/objects/**": true,
+    "**/.git/subtree-cache/**": true,
+    "**/vendor": true,
+    "**/node_modules/*/**": true,
+    "**/tmp": true
+  },
   "files.exclude": {
     "**/.git": true,
     "**/.svn": true,

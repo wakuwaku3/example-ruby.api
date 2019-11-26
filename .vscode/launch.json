@@ -5,14 +5,14 @@
   "version": "0.2.0",
   "configurations": [
     {
-      "name": "Debug Local File",
+      "name": "Debug Rails",
       "type": "Ruby",
       "request": "launch",
       "cwd": "${workspaceRoot}",
-      "program": "${workspaceRoot}/main.rb",
-      "showDebuggerOutput": true,
+      "program": "${workspaceRoot}/bin/rails",
       "pathToBundler": "/home/${env:USER}/.rbenv/shims/bundle",
-      "useBundler": true
+      "useBundler": true,
+      "args": ["server", "-b", "0.0.0.0"]
     }
   ]
 }
