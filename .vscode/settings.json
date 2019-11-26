@@ -4,6 +4,7 @@
   "ruby.useLanguageServer": true,
   "solargraph.definitions": true,
   "solargraph.diagnostics": true,
+  "solargraph.useBundler": true,
   "ruby.lint": {
     "rubocop": {
       "useBundler": true
@@ -22,5 +23,15 @@
     ".vscode",
     "Gemfile**"
   ],
-  "cSpell.words": ["eval", "libreadline", "libssl", "rbenv", "solargraph"]
+  "cSpell.words": ["eval", "libpq", "libreadline", "libssl", "rbenv", "solargraph"],
+  "files.exclude": {
+    "**/.git": true,
+    "**/.svn": true,
+    "**/.hg": true,
+    "**/CVS": true,
+    "**/.DS_Store": true,
+    "**/vendor": true,
+    "**/node_modules": true,
+    "**/tmp": true
+  }
 }
