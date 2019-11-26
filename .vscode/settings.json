@@ -23,16 +23,7 @@
     ".vscode",
     "Gemfile**"
   ],
-  "cSpell.words": [
-    "eval",
-    "libpq",
-    "libreadline",
-    "libssl",
-    "postgres",
-    "postgresql",
-    "rbenv",
-    "solargraph"
-  ],
+  "cSpell.words": ["eval", "libpq", "libreadline", "libssl", "postgres", "postgresql", "rbenv", "solargraph"],
   "files.watcherExclude": {
     "**/.git/objects/**": true,
     "**/.git/subtree-cache/**": true,
@@ -45,9 +36,9 @@
     "**/.svn": true,
     "**/.hg": true,
     "**/CVS": true,
-    "**/.DS_Store": true,
-    "**/vendor": true,
-    "**/node_modules": true,
-    "**/tmp": true
+    "**/.DS_Store": true
+    // "**/vendor": true,
+    // "**/node_modules": true,
+    // "**/tmp": true
   }
 }
