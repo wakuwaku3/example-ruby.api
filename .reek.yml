@@ -7,3 +7,5 @@ detectors:
     enabled: false
   UtilityFunction:
     enabled: false
+  TooManyStatements:
+    enabled: false
