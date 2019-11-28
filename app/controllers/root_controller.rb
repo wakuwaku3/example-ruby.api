@@ -1,5 +1,3 @@
-# frozen_string_literal: true
-
 class RootController < ApplicationController
   skip_before_action :require_sign_in, only: [:index]
 

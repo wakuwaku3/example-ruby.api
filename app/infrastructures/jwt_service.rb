@@ -1,6 +1,6 @@
 class JwtService
   def encode(args)
-    return JWT.encode(args, Rails.application.secrets.secret_key_base, "HS256")
+    JWT.encode(args, Rails.application.secrets.secret_key_base, "HS256")
   end
 
   def decode(token)
@@ -12,6 +12,6 @@ class JwtService
     if !decoded_token.present? && decoded_token.length <1
       return nil
     end
-    return decoded_token[0]
+    decoded_token[0]
   end
 end

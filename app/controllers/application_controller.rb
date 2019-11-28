@@ -3,10 +3,11 @@ class ApplicationController < ActionController::API
   before_action :require_sign_in
   helper_method :signed_in?
   helper_method :user
+  helper_method :authentication_usecase
 
-  def initialize(options={})
+  def initialize(authentication_usecase=nil)
     @user = nil
-    @authentication_usecase = options[:authentication_usecase] || AuthenticationUsecase.new
+    @authentication_usecase = authentication_usecase || AuthenticationUsecase.new
   end
 
   def authenticate
@@ -19,15 +20,19 @@ class ApplicationController < ActionController::API
     end
 
     @user ||= @authentication_usecase.authenticate({token:token})
-    return @user
+    @user
   end
 
   def signed_in?
-    return @user.present?
+    @user.present?
   end
 
   def user
-    return @user
+    @user
+  end
+
+  def authentication_usecase
+    @authentication_usecase
   end
 
   private

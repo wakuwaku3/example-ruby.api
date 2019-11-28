@@ -1,33 +1,21 @@
 class AuthenticationService
-  def initialize(options={})
-    @jwt_service = options[:jwt_service] || JwtService.new
+  def initialize(jwt_service=nil,users_repository=nil,system_clock=nil)
+    @jwt_service = jwt_service || JwtService.new
+    @users_repository=users_repository||UsersRepository.new
+    @system_clock=system_clock||SystemClock.new
   end
 
   def validate_for_authenticate(args)
-    email=args[:email]
-    password=args[:password]
-    if password.blank?
-      return false
-    end
-    if email.blank?
-      return false
-    end
-    return true
+    !args[:email].blank? && !args[:password].blank?
   end
 
   def authenticate(args)
-    email=args[:email]
-    password=args[:password]
-    user=User.find_by(email: email)
-    if !user || !user.authenticate(password)
-      return nil,false
-    end
-    return {uuid:user.uuid},true
+    @users_repository.authenticate(args[:email],args[:password])
   end
 
   def create_sign_in_token(args)
-    expires_at=Time.zone.now+1.days
-    return @jwt_service.encode(args.dup.merge({expires_at:expires_at}))
+    expires_at=@system_clock.now+1.days
+    @jwt_service.encode(args.dup.merge({expires_at:expires_at}))
   end
 
   def authenticate_by_token(args)
@@ -35,14 +23,14 @@ class AuthenticationService
     if !payload.present?
       return nil
     end
-    if payload['expires_at'] < Time.zone.now
+    if payload['expires_at'] < @system_clock.now
       return nil
     end
     email=payload['email']
-    user=User.find_by(email: email)
+    user=@users_repository.find_user_by_email(email)
     if !user
       return nil
     end
-    return user
+    user
   end
 end

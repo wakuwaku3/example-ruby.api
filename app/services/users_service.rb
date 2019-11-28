@@ -1,8 +1,10 @@
 class UsersService
+  def initialize(users_repository=nil)
+    @users_repository=users_repository||UsersRepository.new
+  end
+
   def create(args)
-    uuid = SecureRandom.uuid
-    User.create(name: args[:name],password: args[:password],uuid:uuid,email:args[:email])
-    return uuid
+    @users_repository.create(args)
   end
 
   def validate_for_create(args)
@@ -12,9 +14,13 @@ class UsersService
     if args[:password].blank?
       return false
     end
-    if args[:email].blank?
+    email=args[:email]
+    if email.blank?
       return false
     end
-    return true
+    if !@users_repository.is_unique_email(email)
+      return false
+    end
+    true
   end
 end

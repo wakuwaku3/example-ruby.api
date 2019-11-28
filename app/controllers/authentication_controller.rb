@@ -1,13 +1,9 @@
 class AuthenticationController < ApplicationController
   skip_before_action :require_sign_in, only: [:sign_up, :sign_in]
   
-  def initialize(options={})
-    @authentication_usecase = options[:authentication_usecase] || AuthenticationUsecase.new
-  end
-  
   def sign_up
     json_request = JSON.parse(request.body.read)
-    result,state = @authentication_usecase.sign_up({
+    result,state = authentication_usecase.sign_up({
       name:json_request['name'],
       password:json_request['password'],
       email:json_request['email'],
@@ -21,7 +17,7 @@ class AuthenticationController < ApplicationController
   
   def sign_in
     json_request = JSON.parse(request.body.read)
-    result,status = @authentication_usecase.sign_in({
+    result,status = authentication_usecase.sign_in({
       email:json_request['email'],
       password:json_request['password'],
     })
