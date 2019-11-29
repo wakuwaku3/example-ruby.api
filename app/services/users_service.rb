@@ -1,3 +1,4 @@
+require './app/infrastructures/repositories/users_repository.rb'
 class UsersService
   def initialize(users_repository=nil)
     @users_repository=users_repository||UsersRepository.new

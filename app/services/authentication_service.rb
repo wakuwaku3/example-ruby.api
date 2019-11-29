@@ -1,3 +1,4 @@
+require './app/infrastructures/repositories/users_repository.rb'
 class AuthenticationService
   def initialize(jwt_service=nil,users_repository=nil,system_clock=nil)
     @jwt_service = jwt_service || JwtService.new
