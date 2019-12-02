@@ -9,8 +9,7 @@ class AuthenticationController < ApplicationController
       email:json_request['email'],
     })
     if !state
-      render status: 400, json: { status: 400, message: 'Bad Request' }
-      return
+      return render status: 400, json: { status: 400, message: 'Bad Request' }
     end
     render plain: result[:token]
   end
@@ -22,12 +21,10 @@ class AuthenticationController < ApplicationController
       password:json_request['password'],
     })
     if status==400
-      render status: 400, json: { status: 400, message: 'Bad Request' }
-      return
+      return render status: 400, json: { status: 400, message: 'Bad Request' }
     end
     if status==401
-      render status: 401, json: { status: 401, message: 'Unauthorized' }
-      return
+      return  render status: 401, json: { status: 401, message: 'Unauthorized' }
     end
     render plain: result[:token]
   end

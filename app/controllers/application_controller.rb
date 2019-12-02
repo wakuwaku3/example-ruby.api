@@ -38,8 +38,7 @@ class ApplicationController < ActionController::API
   private
     def require_sign_in
       if !signed_in?
-        render status: 401, json: { status: 401, message: 'Unauthorized' }
-        return
+        return  render status: 401, json: { status: 401, message: 'Unauthorized' }
       end
     end
 end
