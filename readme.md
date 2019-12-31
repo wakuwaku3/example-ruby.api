@@ -1,13 +1,16 @@
 # example-ruby-api
 
 ## environment
+
 - ubuntu 18.04
 - git 2.17.1
 - node 10.16.3
 - docker 19.03.1
 
-## usage 
+## usage
+
 ### install
+
 ```sh
 # install yarn
 curl -sS https://dl.yarnpkg.com/debian/pubkey.gpg | sudo apt-key add -
@@ -30,11 +33,16 @@ rbenv install $version
 rbenv global $version
 
 gem install bundler
+```
+
+### init
+
+```sh
 bundle install
-bundle exec rails webpacker:install
 ```
 
 ### local settings
+
 ```json
 {
   // set `which bundle` result
@@ -43,6 +51,7 @@ bundle exec rails webpacker:install
 ```
 
 ### db settings
+
 ```sh
 # run db
 bash .docker/database/run.sh
@@ -52,15 +61,21 @@ bundle exec rake db:create
 ```
 
 ## commands
+
 ### run db
-```
+
+```sh
 bash .docker/database/run.sh
 ```
+
 ### stop db
-```
+
+```sh
 bash .docker/database/stop.sh
 ```
+
 ### run rails
-```
+
+```sh
 bundle exec rails server -b 0.0.0.0
 ```
