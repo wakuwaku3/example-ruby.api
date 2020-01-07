@@ -1,9 +1,0 @@
-version: '2'
-services:
-  clean-sample-postgres:
-    build: ./postgres
-    image: cbn/clean-sample-postgres
-    ports:
-      - '5432:5432'
-    volumes:
-      - ~/example-ruby-api/postgresql/data/:/var/lib/postgresql/data:Z

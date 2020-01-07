@@ -5,8 +5,6 @@
     "rebornix.project-snippets",
     "rebornix.ruby",
     "streetsidesoftware.code-spell-checker",
-    "castwide.solargraph",
-    "ms-azuretools.vscode-docker",
-    "p1c2u.docker-compose"
+    "castwide.solargraph"
   ]
 }

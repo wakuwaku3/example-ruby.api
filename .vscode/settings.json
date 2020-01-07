@@ -5,6 +5,7 @@
   "solargraph.definitions": true,
   "solargraph.diagnostics": true,
   "solargraph.useBundler": true,
+  "solargraph.bundlerPath": "/usr/local/bin/bundle",
   "ruby.lint": {
     "rubocop": {
       "useBundler": true
@@ -25,6 +26,7 @@
   ],
   "cSpell.words": [
     "eval",
+    "hoge",
     "libpq",
     "libreadline",
     "libssl",
@@ -33,7 +35,7 @@
     "rbenv",
     "rubocop",
     "solargraph"
-  ],
+],
   "files.watcherExclude": {
     "**/.git/objects/**": true,
     "**/.git/subtree-cache/**": true,
@@ -46,6 +48,5 @@
     "**/.hg": true,
     "**/CVS": true,
     "**/.DS_Store": true
-  },
-  "docker-compose.files": [".docker/database/docker-compose.yml"]
+  }
 }
